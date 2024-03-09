@@ -1,0 +1,31 @@
+# version: '3'
+
+# services:
+#   frontend:
+#     build: ./LittleBoxFE
+#     ports:
+#       - "80:80"
+
+#   backend:
+#     build: ./servidor_compartido
+#     ports:
+#       - "3000:3000"
+version: '3'
+
+services:
+  frontend:
+    build: ./LittleBoxFE
+    ports:
+      - "80:80"
+    volumes:
+      - nombre_volumen:/usr/share/nginx/html
+
+  backend:
+    build: ./servidor_compartido
+    ports:
+      - "3000:3000"
+    volumes:
+      - nombre_volumen:/app
+
+volumes:
+  nombre_volumen:
