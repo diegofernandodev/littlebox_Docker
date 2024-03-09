@@ -23,4 +23,4 @@ FROM nginx:alpine
 COPY --from=builder /app/dist/little-box-fe /usr/share/nginx/html
 
 # Exponer el puerto en el que nginx sirve los archivos estáticos (por defecto es 80)
-EXPOSE 80
+EXPOSE 4200
